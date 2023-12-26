@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { within, userEvent, expect } from "@storybook/test";
-import MyPage from "./Page.vue";
+import MyPage from "./PageTest.vue";
 
 const meta: Meta<typeof MyPage> = {
   title: "Example/Page",
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof MyPage>;
 
 // More on interaction testing: https://storybook.js.org/docs/writing-tests/interaction-testing
 export const LoggedIn: Story = {
-  play: async ({ canvasElement }: any) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     const loginButton = canvas.getByRole("button", { name: /Log in/i });
     await expect(loginButton).toBeInTheDocument();

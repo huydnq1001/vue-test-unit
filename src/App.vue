@@ -1,16 +1,18 @@
 <template>
-  <HeaderMenu />
-  <RouterView />
+  <div class="nav-bar">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
+  <router-view />
 </template>
 <script>
-import HeaderMenu from "@/components/HeaderMenu.vue";
-import { RouterView } from "vue-router";
+import { RouterView, RouterLink } from "vue-router";
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "App",
   components: {
-    HeaderMenu,
     RouterView,
+    RouterLink,
   },
 });
 </script>
@@ -25,13 +27,13 @@ export default defineComponent({
   color: #2c3e50;
 }
 
-nav {
+.nav-bar {
   padding: 30px;
 
   a {
     font-weight: bold;
     color: #2c3e50;
-
+    text-decoration: none;
     &.router-link-exact-active {
       color: #42b983;
     }

@@ -57,6 +57,7 @@
 <script lang="ts" setup>
 import "./header.css";
 import MyButton from "./Button.vue";
+import { defineProps, defineEmits } from "vue";
 
 defineProps<{ user: { name: string } | null }>();
 
