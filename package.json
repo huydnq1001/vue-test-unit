@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --open --watch",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "nyc vue-cli-service test:unit --timeout 30000",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "storybook": "storybook dev -p 6006",
@@ -16,6 +16,7 @@
     "axios": "^1.6.2",
     "core-js": "^3.8.3",
     "json-server": "^0.17.4",
+    "nyc": "^15.1.0",
     "primeicons": "^6.0.1",
     "register-service-worker": "^1.7.2",
     "sinon": "^17.0.1",
@@ -25,6 +26,7 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@storybook/addon-essentials": "7.6.4",
     "@storybook/addon-interactions": "7.6.4",
     "@storybook/addon-links": "7.6.4",
@@ -33,7 +35,7 @@
     "@storybook/vue3": "7.6.4",
     "@storybook/vue3-webpack5": "7.6.4",
     "@types/chai": "^4.2.15",
-    "@types/mocha": "^8.2.1",
+    "@types/mocha": "^10.0.6",
     "@types/sinon": "^17.0.2",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",

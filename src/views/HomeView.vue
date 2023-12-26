@@ -8,16 +8,6 @@
       lazy
       :loading="loading"
       @row-edit-save="onRowEditSave"
-      :pt="{
-        table: { style: 'min-width: 50rem' },
-        column: {
-          bodycell: ({ state }) => ({
-            style:
-              state['d_editing'] &&
-              'padding-top: 0.6rem; padding-bottom: 0.6rem',
-          }),
-        },
-      }"
     >
       <Column field="userId" header="User ID" style="width: 20%">
         <template #editor="{ data, field }">
@@ -324,7 +314,6 @@ export default defineComponent({
     };
 
     const deleteTodo = async () => {
-      console.log(1111111111);
       loading.value = true;
       await axios
         .delete(`http://localhost:3000/todos/${todoId.value}`)
@@ -346,7 +335,6 @@ export default defineComponent({
     };
 
     const handleConfirm = (id) => {
-      console.log("handleConfirm", id);
       todoId.value = id;
       confirmDeleted.value = true;
     };

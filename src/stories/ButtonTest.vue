@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import "./button.css";
-import { computed } from "vue";
+import { computed, withDefaults, defineEmits, defineProps } from "vue";
 
 const props = withDefaults(
   defineProps<{

@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import InputText from "primevue/inputtext";
-import { computed } from "vue";
+import { computed, withDefaults, defineProps, defineEmits } from "vue";
 const props = withDefaults(
   defineProps<{
     value: string;
